@@ -68,7 +68,7 @@ class RewriteUrl implements StoreSwitcherInterface
             $targetUrl = $targetStore->getBaseUrl();
             // look for url rewrite match on the target store
             $currentRewrite = $this->urlFinder->findOneByData([
-                UrlRewrite::TARGET_PATH => $oldRewrite->getTargetPath(),
+                UrlRewrite::REQUEST_PATH => $oldRewrite->getRequestPath(),
                 UrlRewrite::STORE_ID => $targetStore->getId(),
             ]);
             if ($currentRewrite) {
